@@ -10,4 +10,6 @@ def selection_sort(arr):
 
 arr=[6,5,4]
 selection_sort(arr)
-print(arr)
+print(arr
+      
+1234556789
