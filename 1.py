@@ -12,4 +12,4 @@ arr=[6,5,4]
 selection_sort(arr)
 print(arr
       
-123455
+123455hsufds09fisd
