@@ -13,3 +13,4 @@ selection_sort(arr)
 print(arr
       
 1234556789
+      1023912301841
