@@ -3,6 +3,7 @@ names=[]
 heights=[]
 y=[]
 i=True
+CHANGES DONE
 while i:
     s=input()
     if s=='q' or s=='Q':
