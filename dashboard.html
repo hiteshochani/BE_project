@@ -1,0 +1,209 @@
+<html>
+<head>
+    <title>Dashboard1234455</title>
+    
+    <h2>Changes Done1234123235</h2>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+
+<style>
+  #navbar {
+    box-shadow: 0 2px 10px rgba(132, 145, 158, 0.027);
+    
+
+  }
+
+  .nav-item>a:hover {
+    background-color:rgb(153, 163, 175);
+  }
+
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: burlywood;
+    font-size: 16px;
+    padding: 7px 10px;
+    /* text-align: center; */
+
+  }
+
+  .nav-item a {
+    color: cyan;
+  }
+
+  .dashboard {
+    /* background-image:url(images/f2.jpeg); */
+    background-size: cover;
+    width: 500px;
+    margin-top: 10px;
+    box-shadow: 0 10px 10px #373c42;
+    padding: 40px;
+    margin: 0 auto;
+
+  }
+
+
+  .header {
+    background-image: url(images/f11.jpeg);
+    background-size: cover;
+  }
+</style>
+
+
+
+  <script src="scripts/dashboard.js"></script>
+</head>
+
+<body>
+    <header class="header">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="navbar">
+    
+        <a href="#" class="navbar-brand "><img class="vul" src="images/vul.png"></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav">
+
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="dashboard.html" class="nav-link">Basic Details</a>
+              </li>
+
+            <li class="nav-item">
+              <a href="vulnerabilities.html" class="nav-link">Application Security</a>
+            </li>
+            <li class="nav-item">
+              <a href="cloud_vul.html" class="nav-link">Cloud Computing</a>
+            </li>
+            <li class="nav-item">
+              <a href="database_vul.html" class="nav-link">Database Assesment</a>
+            </li>
+            <li class="nav-item">
+              <a href="thickclient_vul.html" class="nav-link">Thick Client Security</a>
+            </li>
+            <li class="nav-item">
+              <a href="mobilesec_vul.html" class="nav-link">Mobile Security</a>
+            </li>
+            <li class="nav-item">
+              <a href="api_vul.html" class="nav-link">API Security/Web Services</a>
+            </li>
+    
+          </ul>
+    
+          <ul class="navbar nav ml-auto">
+    
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="logout"><span class="fas fa-user"></span>Logout</a>
+            </li>
+    
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="change_password"><span class="fas fa-key"></span>Change Password</a>
+            </li>
+    
+          </ul>
+    
+        </div>
+      </nav>
+        <div class="dashboard">
+        <form action="#" name="basic_details" class="form">
+
+            <div class="form-group">
+              <label for="client">Name of client:</label>
+              <input type="text" class="form-control" id="client-name">
+            </div>
+
+
+            <div class="form-group">
+              <label for="nameapp">Name of application:</label>
+              <input type="text" class="form-control" id="name_application">
+            </div>
+            <div class="form-group">
+              <label for="urlip">URL/Ip_address:</label>
+              <input type="text" class="form-control" id="url_ip">
+            </div>
+            <div class="form-group">
+                    <label for="scope">Scope Inclusion:</label>
+                    <textarea class="form-control" style="margin: 0px 770.8px 0px 0px; width: 306px; height: 66px; box-shadow:inset 0 0 2px 2px lightsteelblue;"  rows="2" cols="15" id="scopein"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="scope">Scope Exclusion:</label>
+              <textarea class="form-control" style="margin: 0px 770.8px 0px 0px; width: 306px; height: 66px; box-shadow:inset 0 0 2px 2px lightsteelblue;"  rows="2" cols="15"
+                id="scopeex"></textarea>
+            </div>
+
+            <p><strong>Time period:</strong></p>
+            <div class="form-group">
+                    <label for="startdate">Start_Date:</label>
+                    <input type="date" class="form-control" id="startdate">
+            </div>
+            <div class="form-group">
+                    <label for="enddate">End_Date:</label>
+                    <input type="date" class="form-control" id="enddate">
+            </div><br>
+                          <div class="form-group">
+                            <label>Save Basic Details:</label><br>
+                            <button type="button" class="btn btn-dark"
+                                onclick="save();">Save</button></a>
+                          </div>
+            
+      
+              
+            </div>
+            
+          </form>
+       <script>
+         // logout
+          const logout = document.querySelector('#logout');
+          logout.addEventListener('click', (e) => {
+            var user = firebase.auth().currentUser;
+            console.log(user);
+            e.preventDefault();
+            auth.signOut().then(() => {
+              window.location.href = "login.html";
+
+            })
+          });
+
+          const change_password = document.querySelector('#change_password');
+          change_password.addEventListener('click', (e) => {
+            change_password123();
+          });
+       </script>   
+    </header>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
